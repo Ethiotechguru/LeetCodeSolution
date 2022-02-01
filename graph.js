@@ -24,6 +24,14 @@ const graph = {
 	f: [],
 	g: [],
 };
+// const acyclicGraph = {
+// 	f:['g','i'],
+// 	g:['h'],
+// 	i:['k'],
+// 	k:[],
+// 	j:['i'],
+// 	h:[],
+// }
 // console.log("Recursive solution");
 // depthFirstRecursive(graph, "a");
 // console.log("************************");
@@ -40,7 +48,7 @@ const breadthFirstIterative = (graph, source) => {
 		console.log(queue);
 	}
 };
-breadthFirstIterative(graph,'a')
+// breadthFirstIterative(graph,'a')
 
 //? How queue is processed
 //* [b,c]=>[c,d,e]=>[d,e,f,g]=>[e,f,g]=>[f, g]=>[g]=>[]
@@ -59,5 +67,54 @@ const breadthFirstRecursive = (graph, source) => {
     }
     inner();
 };
-breadthFirstRecursive(graph, "a");
+// breadthFirstRecursive(graph, "a");
 
+//* Traveling from the source node to the given destination */
+const acyclicGraph = {
+	f: ["g", "i"],
+	g: ["h"],
+	i: ["k","g"],
+	k: [],
+	j: ["i"],
+	h: [],
+};
+let visited ={}
+const directedGraphRecursive = (s, d) => {
+	//can the graph travel from source to destination?
+
+	for (let neighbor of acyclicGraph[s]) {
+		console.log('Just checking where this goes')
+		if(visited[neighbor]){
+			console.log(visited[neighbor], 'is coming from here');
+			continue;
+		}
+		else if (neighbor === d) {
+			console.log(neighbor, d);
+			return true;
+		}
+		console.log("where does continue goes?");
+		visited[neighbor] = neighbor;
+		console.log(visited);
+		directedGraphRecursive(neighbor, d);
+	}
+	console.log(false);
+	return false;
+};
+// directedGraph('j','g')
+directedGraphRecursive('f','h')
+const directedGraphIterative = (s, d) => {
+	//can the graph travel from source to destination?
+	let stack = [s];
+	while (stack.length > 0) {
+		let current = stack.pop();
+		for (let neighbor of acyclicGraph[current]) {
+			if (neighbor === d) {
+				console.log(neighbor === d);
+				return true;
+			}
+			stack.push(neighbor);
+		}
+	}
+	console.log(false);
+	return false;
+};
