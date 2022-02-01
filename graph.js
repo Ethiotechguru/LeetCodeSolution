@@ -56,6 +56,7 @@ const breadthFirstRecursive = (graph, source) => {
     let queue = [source];
 	function inner() {
         if(queue.length <= 0){
+			
             return;
         }
         let current = queue.shift();
@@ -81,16 +82,16 @@ const acyclicGraph = {
 let visited ={}
 const directedGraphRecursive = (s, d) => {
 	//can the graph travel from source to destination?
-
+	
 	for (let neighbor of acyclicGraph[s]) {
-		console.log('Just checking where this goes')
+		if (neighbor === d) {
+			console.log(neighbor == d);
+			console.log(neighbor, d);
+			return true;
+		}
 		if(visited[neighbor]){
 			console.log(visited[neighbor], 'is coming from here');
 			continue;
-		}
-		else if (neighbor === d) {
-			console.log(neighbor, d);
-			return true;
 		}
 		console.log("where does continue goes?");
 		visited[neighbor] = neighbor;
@@ -101,7 +102,7 @@ const directedGraphRecursive = (s, d) => {
 	return false;
 };
 // directedGraph('j','g')
-directedGraphRecursive('f','h')
+directedGraphRecursive('j','k')
 const directedGraphIterative = (s, d) => {
 	//can the graph travel from source to destination?
 	let stack = [s];
