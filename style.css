@@ -12,19 +12,8 @@ body {
 .nav-list {
     width    : 100%;
     font-size: 1.4em;
-
-    /* background-color: turquoise; */
 }
 
-/* .registration_list{
-    width: 100%;
-    background-color: violet;
-} */
-.reg_item {
-    /* width: 200px; */
-    /* background-color: violet;
-    margin: 30px; */
-}
 
 .nav-list,
 .registration_list {
@@ -66,9 +55,10 @@ body {
     -o-border-radius     : 20px;
 }
 
-.navigtion {
-
-    /* width: 60%; */
+.navigation {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .header_registration {
