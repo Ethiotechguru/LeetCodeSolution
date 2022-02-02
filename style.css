@@ -1,3 +1,79 @@
-body{
-    background-color: black;
+body {
+    background-color: rgb(179, 179, 179);
+}
+
+.header-container {
+    background-color: rgb(17, 17, 17);
+    display         : flex;
+    justify-content : space-between;
+    padding         : 10px;
+}
+
+.nav-list {
+    width    : 100%;
+    font-size: 1.4em;
+
+    /* background-color: turquoise; */
+}
+
+/* .registration_list{
+    width: 100%;
+    background-color: violet;
+} */
+.reg_item {
+    /* width: 200px; */
+    /* background-color: violet;
+    margin: 30px; */
+}
+
+.nav-list,
+.registration_list {
+    display           : flex;
+    /* justify-content: space-between; */
+    color             : white;
+    /* align-items    :center ; */
+    list-style        : none;
+    box-sizing        : border-box;
+}
+
+.nav-lits__item {
+    padding: 10px 20px;
+}
+
+.registration_list {
+    justify-content: space-evenly;
+    width          : 100%;
+    align-items    : center;
+}
+
+.registration_list .reg_item {
+    padding: 10px 20px;
+}
+
+.nav-list .nav-lits__item:hover {
+    background-color: maroon;
+    cursor          : pointer;
+}
+
+.registration_list .reg_item:hover {
+    cursor               : pointer;
+    background-color     : mediumspringgreen;
+    border-radius        : 20px;
+    color                : black;
+    -webkit-border-radius: 20px;
+    -moz-border-radius   : 20px;
+    -ms-border-radius    : 20px;
+    -o-border-radius     : 20px;
+}
+
+.navigtion {
+
+    /* width: 60%; */
+}
+
+.header_registration {
+    width          : 30%;
+    display        : flex;
+    justify-content: space-between;
+    /* width       : 30%; */
 }
