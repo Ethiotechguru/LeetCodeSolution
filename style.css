@@ -67,3 +67,23 @@ body {
     justify-content: space-between;
     /* width       : 30%; */
 }
+.night_mode_container{
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+.night-mode-lable{
+    padding: 0 20px;
+}
+.night_mode-on{
+    background-color: black;
+    padding: 0 10px;
+    color: white;
+    
+}
+.night_mode-off{
+    background-color: rgb(255, 255, 255);
+    padding: 0 10px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}

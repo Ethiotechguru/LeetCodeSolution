@@ -1,4 +1,4 @@
-const fs = require('node:fs')
+// const fs = require('node:fs')
 let l1 = { val: 2, next: { val: 4, next: { val: 3, next: null } } };
 let l2 = { val: 5, next: { val: 6, next: { val: 4, next: null } } };
 let outPut = { val: 7, next: { val: 0, next: { val: 8, next: null } } };
@@ -75,4 +75,20 @@ var addTwoNumbers = function (l1, l2) {
 	console.log(outPut);
 	return newList;
 };
-let listOutPut = addTwoNumbers(l1, l2);
+// let listOutPut = addTwoNumbers(l1, l2);
+
+let nightModeBtn = document.getElementById("nightModeBtn");
+nightModeBtn.addEventListener('click',()=>{
+	let label = document.querySelector(".night-mode-lable");
+	if(nightModeBtn.className === 'night_mode-on'){
+		nightModeBtn.className = 'night_mode-off'
+		nightModeBtn.textContent='Off'
+		document.body.style.backgroundColor = 'black';
+		label.style.color = 'white';
+	}else{
+		nightModeBtn.className = "night_mode-on";
+		nightModeBtn.textContent= 'On';
+		document.body.style.backgroundColor = "white";
+		label.style.color = "black";
+	}
+})
